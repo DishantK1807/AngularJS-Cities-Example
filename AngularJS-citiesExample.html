@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script src="angular.js"></script>
+</head>
+<body ng-init="cities=[{metro: 'Mumbai',continent:'Asia',population: 20400000},
+                      {metro: 'New York',continent:'North America', population: 21295000 },
+					  {metro: 'San Francisco',continent:'North America', population: 5780000},
+					  {metro: 'London',continent:'Europe', population: 8580000},
+					  {metro: 'Rome',continent:'Europe', population: 2715000},
+					  {metro: 'Melbourne',continent:'Australia', population: 3900000 },
+					  {metro: 'San jose',continent:'North America', population: 7354555},
+					  {metro: 'Rostov-on-don',continent:'Europe', population: 1052000}];">
+
+<input type="text" ng-model="searchString" />
+
+<ul>
+<li ng-repeat="city in cities | filter: searchString">{{city.metro}}, {{city.continent}}, {{city.population}}</li>
+</ul>
+</body>
+</html>
